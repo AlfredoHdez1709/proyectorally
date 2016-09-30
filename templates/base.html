@@ -20,13 +20,21 @@
       <ul class="right hide-on-med-and-down">
       {%if request.user.is_authenticated%}
         <li><a href="logged_out.html">Cerrar Sesion</a></li>
+        <li><a href="badges.html">Perfil</a></li>
+
       {%else%}
         <li><a href="{%url 'login'%}">Iniciar sesion</a></li>
       {%endif%}
       </ul>
+      
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="sass.html">iniciar sesion</a></li>
+      {%if request.user.is_authenticated%}
+        <li><a href="sass.html">Cerrar sesion</a></li>
         <li><a href="badges.html">Perfil</a></li>
+      {%else%}
+         <li><a href="sass.html">iniciar sesion</a></li>
+         <li><a href="badges.html">Descarga la app</a></li>
+      {%endif%}
       </ul>
     </div>
   </nav>
@@ -47,6 +55,7 @@
         <script>
            $(document).ready(function(){
             $('.parallax').parallax();
+             $('.modal-trigger').leanModal();
        });
         </script>
 
