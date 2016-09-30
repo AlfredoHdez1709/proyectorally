@@ -2,7 +2,7 @@
 
 {%block content%}
 
-{%if request.user.is_authentificated%}
+{%if request.user.is_authenticated%}
 	<h1>Bienvenido {{request.user.first_name}}</h1>
 	<h4>Tu correo es: {{request.user.email}}</h4>
 {%else%}
