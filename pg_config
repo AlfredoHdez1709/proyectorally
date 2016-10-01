@@ -1,2 +1,1 @@
-export PATH=/path/to/compiled/postgresql/bin:"$PATH"
-pip install psycopg2
+
