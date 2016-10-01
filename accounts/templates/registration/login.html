@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body>
+{%if form.errors%}
+<p>Tu usuario y contraseña no coinciden</p>
+{%else%}
+<form action="{%url 'login'%}" method="post">
+	{%csrf_token%}
+	{{form.as_p}}
+	<input type="hidden" name="next" value="{{next}}">
+	<input type="submit" value="Iniciar Sesion">
+</form>
+<p>Si aun no tienes tu cuenta, creala <a href="{%url 'alta'%}">Aquí</p>
+{%endif%}
+</body>
+</html>
