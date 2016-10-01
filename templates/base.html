@@ -20,7 +20,7 @@
       <ul class="right hide-on-med-and-down">
       {%if request.user.is_authenticated%}
         <li><a href="{%url 'logout'%}?next=/">Cerrar Sesion</a></li>
-        <li><a href="badges.html">Perfil</a></li>
+        <li><a href="{%url 'profile'%}">Perfil</a></li>
 
       {%else%}
         <li><a href="{%url 'login'%}">Iniciar sesion</a></li>
@@ -31,7 +31,7 @@
       <ul class="side-nav" id="mobile-demo">
       {%if request.user.is_authenticated%}
         <li><a href="{%url 'logout'%}?next=/">Cerrar sesion</a></li>
-        <li><a href="badges.html">Perfil</a></li>
+        <li><a href="{%url 'profile'%}">Perfil</a></li>
       {%else%}
          <li><a href="{%url 'login'%}">iniciar sesion</a></li>
          <li><a href="badges.html">Descarga la app</a></li>
