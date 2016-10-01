@@ -1,19 +1,29 @@
-<!DOCTYPE html>
+{% extends "base.html" %}
+
+{%block content%}
 <html>
 <head>
 	<title>Login</title>
 </head>
 <body>
 {%if form.errors%}
-<p>Tu usuario y contraseña no coinciden</p>
+<div class="center" >
+	<br>
+	<img   width="200" height="200" src="/media/img/error.png">
+<p class="flow-text center" > Tu usuario y contraseña no coinciden, regresa <a href="{%url 'login'%}">Aquí</p>
+</div>
+
 {%else%}
-<form action="{%url 'login'%}" method="post">
+<div class="row col s12 center">
+<form class="col s12 center" action="{%url 'login'%}" method="post">
 	{%csrf_token%}
 	{{form.as_p}}
 	<input type="hidden" name="next" value="{{next}}">
-	<input type="submit" value="Iniciar Sesion">
+	<input class="waves-effect waves-light btn" type="submit" value="Iniciar Sesion">
 </form>
-<p>Si aun no tienes tu cuenta, creala <a href="{%url 'alta'%}">Aquí</p>
+<p class="flow-text center" >Si aun no tienes tu cuenta, creala <a href="{%url 'alta'%}">Aquí</p>
+</div>
 {%endif%}
 </body>
 </html>
+{%endblock content%}
