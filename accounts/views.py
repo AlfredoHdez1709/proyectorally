@@ -33,7 +33,7 @@ class Alta(View):
 			perfil_nuevo = Perfil()
 			perfil_nuevo.user = new_user
 			perfil_nuevo.save()
-			return redirect('perfil')
+			return redirect('profile')
 		else:
 			context = {
 				'form':form
