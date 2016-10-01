@@ -8,11 +8,13 @@
 <a href="{%url 'logout'%}">Aquí</a>
 
 {%else%}
-<form action="." method="post">
+<div class="row col s12 center">
+<form class="row col s12 center" action="." method="post">
 	{%csrf_token%}
 	{{form.as_p}}
-	<input type="submit" name="Darme de Alta">
+	<input class="waves-effect waves-light btn" type="submit" name="Darme de Alta">
 </form>
+</div>
 {%endif%}
 
 {%endblock content%}
